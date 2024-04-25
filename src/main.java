@@ -1,7 +1,5 @@
-//Import Section
 import java.util.Random;
 import java.util.Scanner;
-
 /*
  * Provided in this class is the neccessary code to get started with your game's implementation
  * You will find a while loop that should take your minefield's gameOver() method as its conditional
@@ -13,11 +11,27 @@ import java.util.Scanner;
  * 3. When working inside your while loop think about what happens each turn. We get input, user our methods, check their return values. repeat.
  * 4. Once while loop is complete figure out how to determine if the user won or lost. Print appropriate statement.
  */
+public class main{
+    public static void Main(String[] args) {
+        System.out.println("Choose the mode!");
+        System.out.println("Easy Mode will have Rows: 5, Columns: 5, Mines: 5, Flags: 5");
+        System.out.println("Medium Mode will have Rows: 9, Columns: 9, Mines: 12, Flags: 12");
+        System.out.println("Hard Mode will have Rows: 20, Columns: 20, Mines: 40, Flags: 40");
 
-public class main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        createMines(x,y,z);
+        evaluateField(x,y,z);
+        revealStartingArea(x,y,z);
+
+        Boolean debugMode = false; //setting a boolean for when on debug mode
 
 
-    while(/* ! minefield.gameOver() */ ){
-    }
+        //while(/* ! minefield.gameOver() */ ){
+
+        }
+
+        }
+
     
-}
+

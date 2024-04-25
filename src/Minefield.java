@@ -1,3 +1,5 @@
+//Written by Aaron Siddiky, siddi186
+
 import java.util.Queue;
 import java.util.Random;
 
@@ -20,8 +22,11 @@ public class Minefield {
 
     /* 
      * Class Variable Section
-     * 
+     *
     */
+
+    private Cell[][] mfield;
+    private int flags;
 
     /*Things to Note:
      * Please review ALL files given before attempting to write these functions.
@@ -40,7 +45,8 @@ public class Minefield {
      * @param flags      Number of flags, should be equal to mines
      */
     public Minefield(int rows, int columns, int flags) {
-
+     mfield = new Cell[rows][columns];
+     this.flags = flags;
 
     }
 
@@ -69,7 +75,18 @@ public class Minefield {
      * @param mines      Number of mines to place.
      */
     public void createMines(int x, int y, int mines) {
+        Random ranNum = new Random();
+        for(int i = 0; i<mines; i++) {
+            int xCoor = ranNum.nextInt(mfield.length); //new random x coordinate between 0 and length of minefield
+            int yCoor = ranNum.nextInt(mfield[0].length); //new random y coordinate between 0 and the number of columns in the minefield
 
+            if (xCoor != x || yCoor != y || !mfield[xCoor][yCoor].getStatus().equals("M")) { //checking if random coordinates are not equal to existing cells
+                mfield[xCoor][yCoor].setStatus("M");
+            }
+            else{
+                i--; //decrementing i to repeat the loop iteration so that it tries again
+            }
+        }
     }
 
     /**
@@ -88,6 +105,8 @@ public class Minefield {
      */
     public boolean guess(int x, int y, boolean flag) {
 
+
+        return false;
     }
 
     /**
