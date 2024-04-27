@@ -164,7 +164,7 @@ public class Minefield {
     public boolean gameOver() {
         for (int i = 0; i < mfield.length; i++) { //checking if all the cells have been revealed, if they have we will set as false because game is not over until everything is revealed
             for (int j = 0; j < mfield[0].length; j++) {
-                if((!mfield[i][j].getStatus().equals("M") && !mfield[i][j].getStatus().equals("F")) && !mfield[i][j].getRevealed()) {
+                if((!mfield[i][j].getRevealed())) {
                     return false;
                 }
             }
