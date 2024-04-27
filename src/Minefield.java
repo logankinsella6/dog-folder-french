@@ -167,6 +167,9 @@ public class Minefield {
                 if((!mfield[i][j].getRevealed())) {
                     return false;
                 }
+                else if(mfield[i][j].getStatus().equals("M")){ //if it is a mine, and it is found, then return true
+                    return false;
+                }
             }
         }
         return true;

@@ -70,10 +70,10 @@ public class main {
             m.revealStartingArea(x, y);
             m.guess(x, y, false);
 
-            System.out.println(m); //print the minefield
             if (debug) { //if debug is true, then open debug
                 m.debug();
             }
+            System.out.println(m); //print the minefield
             scn = new Scanner(System.in);
             while (!m.gameOver()) { //Beginning of the game loop
                 x = -1;
@@ -121,10 +121,12 @@ public class main {
                     System.out.println("Congrats!! You won!");
                     break; //ends game
                 }
+                m.debug(); //prints when game is over
                 System.out.println(m);
 
 
-                m.debug(); //prints when game is over
+
             }
+            m.debug(); //prints when game is over
         }
     }
